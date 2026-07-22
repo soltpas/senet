@@ -136,8 +136,14 @@ function draw() {
 
     if(a + b + c + d + e == 500) {
         fill(100, 0, 0);
-        textSize(500);
+        textSize(100);
         text("RED WIN!", 600, 450);
+    }
+
+    if(aa + bb + cc + dd + ee == 500) {
+        fill(0, 0, 100);
+        textSize(100);
+        text("BLUE WIN!", 600, 450);
     }
 }
 
@@ -175,6 +181,9 @@ function movePiece(position) {
         if(position == 26 && z == 1){ {
             z = 0;
             position += y;
+            if (position == 31) {
+                position = 100;
+            }
             for (let i = 0; i < 9; i += 1) {
                 if (
                     position === a || position === b || position === c || position === d || position === e ||
@@ -218,7 +227,7 @@ function movePiece(position) {
                 position = 100;
                 y = 0;
         }
-        if (position >= 28 && y == 1) {
+        if (position >= 28) {
                 z = 0;
                 y = 0;
         }
